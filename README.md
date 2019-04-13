@@ -1,7 +1,44 @@
 # Tipranks.com API
 
-- Fetches data from tipranks.com for a given stock ticker.
-- You need to install Node.js to use the package (see tutorial below)
+For any company (e.g. Tesla) the API returns
+- price targets (mean, high, low, etc) calculated from analyst estimates
+- news sentiment data (bullish vs bearish) based on published articles in the last week
+
+# Examples
+
+## Tesla Price Targets
+```json
+{
+    "symbol": "TSLA",
+    "priceTargets": {
+        "mean": 297.3333333333333,
+        "median": 300,
+        "highest": 500,
+        "lowest": 54,
+        "numberOfEstimates": 21
+    }
+}
+```
+
+## Tesla News Sentiment
+```json
+{
+    "symbol": "TSLA",
+    "sentiment": {
+        "bullishPercent": 0.4062,
+        "bearishPercent": 0.5938
+    },
+    "buzz": {
+        "articlesInLastWeek": 143,
+        "weeklyAverage": 147.25,
+        "buzz": 0.9711
+    },
+    "sectorAverageBullishPercent": 0.6204,
+    "sectorAverageNewsScore": 0.52,
+    "companyNewsScore": 0.3969
+}
+```
+
 
 # Setup
 
@@ -47,18 +84,21 @@ below for an example.
 ```javascript
 const tipranksApi = require('tipranks-api-v2');
 
-tipranksApi.getPriceTargets('MU').then(result => console.log(result));
+tipranksApi.getPriceTargets('TSLA').then(result => console.log(result));
 ```
 
 ### Output
-```
-{ symbol: 'MU',
-  priceTargets: 
-   { mean: 83.28571428571429,
-     median: 80,
-     highest: 120,
-     lowest: 60,
-     numberOfEstimates: 21 } }
+```json
+{
+    "symbol": "TSLA",
+    "priceTargets": {
+        "mean": 297.3333333333333,
+        "median": 300,
+        "highest": 500,
+        "lowest": 54,
+        "numberOfEstimates": 21
+    }
+}
 ```
 
 ## Get News Sentiment: `getNewsSentimentData`
@@ -70,15 +110,24 @@ tipranksApi.getPriceTargets('MU').then(result => console.log(result));
 ```javascript
 const tipranksApi = require('tipranks-api-v2');
 
-tipranksApi.getNewsSentimentData('MU').then(result => console.log(result));
+tipranksApi.getNewsSentimentData('TSLA').then(result => console.log(result));
 ```
 
 ### Output
-```
-{ symbol: 'MU',
-  sentiment: { bullishPercent: 0.8, bearishPercent: 0.2 },
-  buzz: { articlesInLastWeek: 10, weeklyAverage: 18.75, buzz: 0.5333 },
-  sectorAverageBullishPercent: 0.6148,
-  sectorAverageNewsScore: 0.5083,
-  companyNewsScore: 0.722 }
+```json
+{
+    "symbol": "TSLA",
+    "sentiment": {
+        "bullishPercent": 0.4062,
+        "bearishPercent": 0.5938
+    },
+    "buzz": {
+        "articlesInLastWeek": 143,
+        "weeklyAverage": 147.25,
+        "buzz": 0.9711
+    },
+    "sectorAverageBullishPercent": 0.6204,
+    "sectorAverageNewsScore": 0.52,
+    "companyNewsScore": 0.3969
+}
 ```

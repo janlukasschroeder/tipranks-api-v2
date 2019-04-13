@@ -1,5 +1,5 @@
 const api = require('./index');
 
-api.getPriceTargets('MU').then(result => console.log(result));
+api.getPriceTargets('TSLA').then(result => console.log(result));
 
-api.getNewsSentimentData('MU').then(result => console.log(result));
+api.getNewsSentimentData('TSLA').then(result => console.log(result));
