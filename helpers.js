@@ -54,8 +54,8 @@ exports.fetch = (query) => {
 const get = (retry = 0, query, resolve, reject) => {
 
   const headers = {
-    'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36',
-    'cookie': 'visid_incap_971406=Km6BxXMhSuayG9HtQxLu3JTOUlsAAAAAQUIPAAAAAACKjy2oW3qpi0lIis+8tFVR; nlbi_971406=STNrPkz79kmTfqgBB0ZnaQAAAAC4dvslsliSGOxANhSe3QvQ; filters={%22sector%22:%22general%22%2C%22period%22:%22yearly%22%2C%22benchmark%22:%22none%22}; _ga=GA1.2.1068525719.1532153495; _gid=GA1.2.649486260.1532153495; ai_user=cq1We|2018-07-21T06:11:35.402Z; km_ai=N8WEl4YX%2F5hEIhq6SqKv5rMr%2FUw%3D; abtests=0,0; incap_ses_972_971406=Kp8ZcTvsBC64TzjGNj19DTviUlsAAAAA9MIMnFTs8qVySykb6CzxCQ==; km_vs=1; km_lv=x; kvcd=1532163159523; ai_session=hmzdP|1532162289250|1532163633527.5; _ceg.s=pc7lic; _ceg.u=pc7lic; _gat=1; _gat_UA-38500593-6=1'
+    'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36',
+    'cookie': 'filters={%22sector%22:%22general%22%2C%22period%22:%22yearly%22%2C%22benchmark%22:%22none%22}; _ga=GA1.2.1399008322.1555113821; _gid=GA1.2.199147539.1555113821; D_IID=B9E15023-3DD7-3BB9-9D06-5B9C2C9C6A69; D_UID=58866189-FC50-314E-B158-F1E9D40FDC1C; D_ZID=474CF837-B3C6-3AD7-839D-E3B1EB8D16DA; D_ZUID=E0A8F62F-25D5-3A98-BBAA-00DD3A87316A; D_HID=3BE3BCD8-6BF8-3F9D-8E6A-D7B4CE314A4B; D_SID=218.214.31.158:if63DotFdVOpAoT1ZWpV+grUhn/qeYWJpFO7Pfg2DoI; tr-experiments-version=1.04; tipranks-experiments=%7b%22Experiments%22%3a%5b%7b%22Name%22%3a%22first-few-analyst-ratings%22%2c%22Variant%22%3a%22default%22%7d%2c%7b%22Name%22%3a%22go-pro-variant%22%2c%22Variant%22%3a%22v2%22%7d%5d%7d; ai_user=eSsrp|2019-04-13T00:03:42.201Z; kvcd=1555113823522; km_ai=NsaUIpg2Gg7ZEYz9%2FJj6g8eHQtM%3D; km_vs=1; km_lv=1555113824; ai_session=r5v1F|1555113823571.08|1555114091199.975'
   };
 
   const parts = query.split('/');
