@@ -22,5 +22,8 @@
   "homepage": "https://github.com/janlukasschroeder/tipranks-api-v2#readme",
   "dependencies": {
     "moment": "^2.22.2"
+  },
+  "bin": {
+    "tipranks-api-v2": "./index.js"
   }
 }
